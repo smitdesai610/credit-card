@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./scss/card.css">
+  <title>Credit Card</title>
+</head>
+<body>
+  <div class="container">
+    <div class="item1"></div>
+    <div class="item2"> 
+
+      <form id="card" class="form">
+        <div class="user-name">
+            <label for="name">Cardholder Name</label>
+            <input type="text" id="cardholder-name" name="name" placeholder="e.g. Jane Appleseed">
+            <span class="error-message"></span>
+            <span class="formate-error"></span>
+          </div>
+    
+        <div class="card-number">
+            <label for="number">Card Number</label>
+            <input type="text" id="credit-card-input" name="card-number" maxlength="19" placeholder="e.g. 1234 5678 9123 0000"> 
+            <span class="error-message"></span>
+            <span class="formate-error"></span>
+        </div>
+    
+        <div class="exp-date">
+            <div class="dates">
+                <label for="exp-date">Exp. Date (MM/YY)</label>
+                <div class="exp-inputs">
+                    <input class="months" type="number" id="exp-month" placeholder="MM" min="0" max="12" oninput="limitMonthInput(this)">
+                    <input class="years" type="number" id="exp-year" placeholder="YY" min="0" max="99" oninput="limitYearInput(this)">
+                </div>
+               <span class="error-message"></span>
+            </div>
+    
+            <div class="cvv">
+                <label for="cvvnumber">CVC</label>
+                <input type="number" id="cvv-number" placeholder="e.g. 123" min="100" max="999" oninput="limitCvvInput(this)">
+                <span class="error-message"></span>
+            </div>
+        </div>
+    
+        <button class="confirm-btn" id="confirm-btn">Confirm</button>
+    </form>
+    
+      <div class="thank-you hidden">
+        <div class="success-icon">
+          <img src="./images/icon-complete.svg" alt="success icon">
+        </div>
+        <div class="thank-you-text">Thank you!</div>
+        <div class="thank-you-message">We've added your card details</div>
+        <button class="continue-btn">Continue</button>
+      </div>
+
+      <div class="card">
+        <div class="front-card">
+          <div class="card-logo">
+            <img src="./images/card-logo.svg" alt="card logo">
+          </div>
+          <div class="show-card-number">
+            <span>0000 0000 0000 0000</span>
+          </div>
+          <div class="card-holder-info">
+            <div class="show-card-holder-name">
+              <span>Jane Appleseed</span>
+            </div>
+            <div class="show-card-exp-date">
+              <span>00/00</span>
+            </div>
+          </div>
+        </div>
+        <div class="back-card"><span class="show-cvv-number">000</span></div>
+      </div>
+    </div>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>
